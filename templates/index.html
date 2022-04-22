@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gateway Data</title>
+</head>
+<body>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 25%;">Device</td>
+<td style="width: 25%;">ID</td>
+<td style="width: 25%;">Data</td>
+</tr>
+{% for elephant in elephants %}
+<tr>
+<td style="width: 25%;">{{elephant.name}}</td>
+<td style="width: 25%;">{{elephant.note}}</td>
+<td style="width: 25%;">{{elephant.id}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<div class="container">
+    <form method="post" action="/">
+           <input type ="submit" name="action" value="Download">
+    </form>
+</div>
+</body>
+</html>

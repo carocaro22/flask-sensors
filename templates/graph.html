@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+
+<body>
+<h2>Temperature - Mittweida</h2>
+<img src="data:image/png;base64, {{ plot_url }}">
+<table style="border-collapse: collapse; width: 100%;" border="1">
+    <tbody>
+    <tr>
+        <td style="width: 25%;">ID</td>
+        <td style="width: 25%;">Device</td>
+        <td style="width: 25%;">Temperature</td>
+        <td style="width: 25%;">Time</td>
+    </tr>
+    {% for temperature in temperatures %}
+    <tr>
+        <td style="width: 25%;">{{temperature.id}}</td>
+        <td style="width: 25%;">{{temperature.deviceName}}</td>
+        <td style="width: 25%;">{{temperature.data}}</td>
+        <td style="width: 25%;">{{temperature.rxInfos[0].time}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
